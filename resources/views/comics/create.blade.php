@@ -41,7 +41,7 @@
 
                 <div class="col-4">
                     <label for="sale_date" class="form-label">Sale Date</label>
-                    <input type="text" id="sale_date" name="sale_date" class="form-control" placeholder="Insert Sale Date">
+                    <input type="date" id="sale_date" name="sale_date" class="form-control" placeholder="Insert Sale Date">
                     <div class="form-text">Insert the date of release of the Comic</div>
                 </div>
 
