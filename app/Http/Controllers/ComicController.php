@@ -36,20 +36,25 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        
-        $newComic = new Comic;
-        
-        $newComic->title = $request['title'] ;
-        $newComic->description = $request['description'] ;
-        $newComic->thumb = $request['thumb'];
-        $newComic->price = $request['price'];
-        $newComic->series = $request['series'];
-        $newComic->sale_date = $request['sale_date'];
-        $newComic->type = $request['sale_date'];
-        $newComic->artists = $request['artists'];
-        $newComic->writers = $request['writers'];
+        // Method filling every field
+        // $newComic = new Comic;        
+        // $newComic->title = $request['title'] ;
+        // $newComic->description = $request['description'] ;
+        // $newComic->thumb = $request['thumb'];
+        // $newComic->price = $request['price'];
+        // $newComic->series = $request['series'];
+        // $newComic->sale_date = $request['sale_date'];
+        // $newComic->type = $request['type'];
+        // $newComic->artists = $request['artists'];
+        // $newComic->writers = $request['writers'];
 
+        // Method using fill();
+        // $newComic = new Comic;
+        // $newComic -> fill($request->all());
+
+        // Method using create();
+        $newComic = Comic::create($request->all());
+        
         $newComic->save();
 
         // dd($newComic);

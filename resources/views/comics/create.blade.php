@@ -51,7 +51,7 @@
                     <div class="form-text">Insert the price of the Comic</div>
                 </div>
                 <div class="col-12">
-                    <label for="artists" class="form-label">Password</label>
+                    <label for="artists" class="form-label">Artists</label>
                     <input type="text" id="artists" name="artists" class="form-control" placeholder="Insert Title">
                     <div class="form-text">Insert the artists of the Comic:<br>artist number1, artist number2,...</div>
                 </div>
