@@ -1,12 +1,12 @@
 <header>
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="">DC COMICS</a>
+          {{-- <a class="navbar-brand" href="">logo space</a> --}}
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              {{-- <a class="nav-link active" href="#">Home</a> --}}
-              <a class="nav-link {{request()->routeIs('comics.edit') ? 'active' : ''}}" href="">New Comic</a>
-              <a class="nav-link" href="">Edit Comic</a>
+              <a class="nav-link {{request()->routeIs('comics.index') ? 'active' : ''}}" href="{{ route('comics.index')}}">Home</a>
+              <a class="nav-link {{request()->routeIs('comics.create') ? 'active' : ''}}" href="{{ route('comics.create') }}">New Comic</a>
+              <a class="nav-link {{request()->routeIs('comics.edit') ? 'active' : ''}}" href="">Edit Comic</a>
             </div>
           </div>
         </div>
