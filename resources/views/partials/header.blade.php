@@ -5,7 +5,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               {{-- <a class="nav-link active" href="#">Home</a> --}}
-              <a class="nav-link" href="">New Comic</a>
+              <a class="nav-link {{request()->routeIs('comics.edit') ? 'active' : ''}}" href="">New Comic</a>
               <a class="nav-link" href="">Edit Comic</a>
             </div>
           </div>

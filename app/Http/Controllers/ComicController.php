@@ -14,7 +14,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        return view('comics.index');
+        $comics = Comic::all();
+        return view('comics.index', compact('comics'));
     }
 
     /**
@@ -41,12 +42,12 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Comic $comic)
+    {       
+        return view('comics.show', compact('comic'));
     }
 
     /**
