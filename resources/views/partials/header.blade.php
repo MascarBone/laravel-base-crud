@@ -6,7 +6,6 @@
             <div class="navbar-nav">
               <a class="nav-link {{request()->routeIs('comics.index') ? 'active' : ''}}" href="{{ route('comics.index')}}">Home</a>
               <a class="nav-link {{request()->routeIs('comics.create') ? 'active' : ''}}" href="{{ route('comics.create') }}">New Comic</a>
-              <a class="nav-link {{request()->routeIs('comics.edit') ? 'active' : ''}}" href="">Edit Comic</a>
             </div>
           </div>
         </div>

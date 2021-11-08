@@ -54,7 +54,7 @@ class ComicController extends Controller
 
         // Method using create();
         $newComic = Comic::create($request->all());
-        
+
         $newComic->save();
 
         // dd($newComic);
@@ -77,24 +77,28 @@ class ComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        // dd($comic);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        
+        $comic->update($request->all());
+        
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**

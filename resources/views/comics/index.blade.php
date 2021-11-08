@@ -15,6 +15,7 @@
                         <p class="card-text">{{$comic->type}}</p>
                     </div>
                 </a>
+                <a href="{{ route('comics.edit', $comic) }}" class="mb-3 btn btn-primary">Edit Comic</a>
             </div>
         @empty
             <h3>No comics available</h3>

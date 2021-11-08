@@ -14,7 +14,7 @@
 <main>
 
     <div class="container">
-        <div class="row">
+        <div class="row g-3">
             @yield('content')
         </div>
     </div>
