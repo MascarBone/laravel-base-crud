@@ -15,7 +15,12 @@
                         <p class="card-text">{{$comic->type}}</p>
                     </div>
                 </a>
-                <a href="{{ route('comics.edit', $comic) }}" class="mb-3 btn btn-primary">Edit Comic</a>
+                <a href="{{ route('comics.edit', $comic) }}" class="align-self-end mb-3 btn btn-primary">Edit Comic</a>
+                <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="align-self-end">
+                    @csrf
+                    @method('DELETE')
+                    <button class="mb-3 btn btn-primary" type="submit">DELETE</button>
+                </form>
             </div>
         @empty
             <h3>No comics available</h3>
