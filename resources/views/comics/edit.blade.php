@@ -5,7 +5,7 @@
 @section('content')
     
     <section class="col-12">
-        <form action="{{ route('comics.update', $comic) }}" method="POST">
+        <form action="{{ route('comics.update', ['comic' => $comic->id]) }}" method="POST">
             @csrf
             @method('PATCH')
             <div class="row gy-3 mb-3">

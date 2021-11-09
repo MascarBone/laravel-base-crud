@@ -11,7 +11,7 @@
         @endif
         @forelse ($comics as $comic)
             <div class="card col-4">
-                <a href="{{ route('comics.show', $comic) }}">
+                <a href="{{ route('comics.show', ['comic' => $comic]) }}">
                     <img src="{{$comic->thumb}}" class="card-img-top" alt="{{$comic->title}}">
                     <div class="card-body">
                         
@@ -20,8 +20,8 @@
                         <p class="card-text">{{$comic->type}}</p>
                     </div>
                 </a>
-                <a href="{{ route('comics.edit', $comic) }}" class="align-self-end mb-3 btn btn-primary">Edit Comic</a>
-                <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="delete-form align-self-end" data-name="{{$comic->title}}">
+                <a href="{{ route('comics.edit', ['comic' => $comic]) }}" class="align-self-end mb-3 btn btn-primary">Edit Comic</a>
+                <form action="{{ route('comics.destroy', ['comic'=>$comic->id]) }}" method="POST" class="delete-form align-self-end" data-name="{{$comic->title}}">
                     @csrf
                     @method('DELETE')
                     <button class="mb-3 btn btn-primary" type="submit">DELETE</button>

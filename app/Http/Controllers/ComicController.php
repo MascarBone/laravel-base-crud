@@ -37,7 +37,7 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         // Method filling every field
-        // $newComic = new Comic;        
+        // $newComic = new Comic();        
         // $newComic->title = $request['title'] ;
         // $newComic->description = $request['description'] ;
         // $newComic->thumb = $request['thumb'];
@@ -49,7 +49,7 @@ class ComicController extends Controller
         // $newComic->writers = $request['writers'];
 
         // Method using fill();
-        // $newComic = new Comic;
+        // $newComic = new Comic();
         // $newComic -> fill($request->all());
 
         // Method using create();
@@ -90,12 +90,13 @@ class ComicController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Comic  $comic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)
     {
-        
+        // dd($id);
+        // Comic::where('id', 1)->update($request->all());
         $comic->update($request->all());
         
         return redirect()->route('comics.show', compact('comic'));
@@ -107,7 +108,7 @@ class ComicController extends Controller
      * @param  Comic $comic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Comic $comic)
+    public function destroy(Comic $comic)
     {
         $comic->delete();
 
