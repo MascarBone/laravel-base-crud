@@ -21,7 +21,7 @@
                     </div>
                 </a>
                 <a href="{{ route('comics.edit', $comic) }}" class="align-self-end mb-3 btn btn-primary">Edit Comic</a>
-                <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="align-self-end">
+                <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="delete-form align-self-end">
                     @csrf
                     @method('DELETE')
                     <button class="mb-3 btn btn-primary" type="submit">DELETE</button>
@@ -32,4 +32,18 @@
             
         @endforelse
 
+@endsection
+
+@section('script')
+    <script>
+        const deleteForms = document.querySelectorAll('.delete-form');
+
+        deleteForms.forEach((form, i)=> {
+            console.log(form);
+            console.log(i);
+        });
+        
+        // console.log('ciao');
+        // const data = window.open('mostrati');
+    </script>
 @endsection
