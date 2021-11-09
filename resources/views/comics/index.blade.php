@@ -4,6 +4,11 @@
 
 
 @section('content')
+        @if (session('item'))
+            <div class="col-12 alert alert-success">
+                <h3>"{{ session('item') }}" deleted with success</h3>
+            </div>
+        @endif
         @forelse ($comics as $comic)
             <div class="card col-4">
                 <a href="{{ route('comics.show', $comic) }}">
